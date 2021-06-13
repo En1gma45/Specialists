@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "mindly_tz",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

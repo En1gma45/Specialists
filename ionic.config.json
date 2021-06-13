@@ -1,0 +1,7 @@
+{
+  "name": "mindly_tz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
