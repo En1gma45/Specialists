@@ -11,6 +11,7 @@ import './Main.css'
 
 const Main: React.FC = () => {
 
+    //Creating variables
     const [specs, setSpecs]: any[] = useState([])
     const [id, setId] = useState()
     const [date, setDate] = useState()
@@ -23,7 +24,7 @@ const Main: React.FC = () => {
     })
 
 
-
+// Fetching data from database
     useEffect(()=>{
         
         const fetchData = async () =>{
@@ -35,12 +36,14 @@ const Main: React.FC = () => {
         fetchData()
     }, [])
 
+    //Writing data to variables
     useEffect(()=>{
         setTime({...specs[index]}.currentTime)
         setDate({...specs[index]}.currentDate)
         setId({...specs[index]}.id?.trim())
     }, [specs, index])
 
+    //Generating array of DataItems
     const DateItems = (activeDate:any) =>{
         let items: any[] = []
         let names: Array<string> = ['сегодня', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
@@ -59,6 +62,7 @@ const Main: React.FC = () => {
         return items
     }
 
+    //Adding class to chosen element
     const ToggleHandler = (e:any) =>{
         let list = Array.from(document.getElementsByClassName(e.target.classList))
         list.map((item:any)=>{
@@ -69,6 +73,7 @@ const Main: React.FC = () => {
         e.target.classList.contains('time_item') ? setTime(e.target.value): setDate(e.target.value)
     }
 
+    //Updating data
     const UploadData = () => {
         let db = firebase.firestore()
         db.collection("specialists").doc(id).update({
@@ -77,6 +82,7 @@ const Main: React.FC = () => {
         })
     }
 
+    //Adding function to make items scrollable
     const MouseDownHandler = (e:any) =>{
         if(!e) return
 
@@ -87,6 +93,7 @@ const Main: React.FC = () => {
         })
     }
 
+    //Adding function to make items scrollable
     const MouseUpHandler = (e:any) =>{
         if(!e) return
         setScroll({
@@ -95,6 +102,7 @@ const Main: React.FC = () => {
         })
     }
 
+    //Adding function to make items scrollable
     const MouseMoveHandler = (e:any) =>{
         if(!e) return
 
@@ -112,20 +120,17 @@ const Main: React.FC = () => {
         
     }
     
+    //Adding EventListener for scrollable items
     useEffect(()=>{
         document.addEventListener('mousedown', MouseDownHandler)
         document.addEventListener('mouseup', MouseUpHandler)
-        //document.addEventListener('mousemove', MouseMoveHandler)
         return ()=>{
             document.removeEventListener('mousedown', MouseDownHandler)
             document.removeEventListener('mouseup', MouseUpHandler)
-            //document.removeEventListener('mousemove', MouseMoveHandler)
         }
     })
     
-    //console.log(document.getElementsByClassName('specialists')[0]?.scrollLeft);
-    
-
+    //Rendering component
     return (
         <div className='page'>
             <div className='specialists'>
