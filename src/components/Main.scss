@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.page{
+    width: 375px;
+    min-height: 850px;
+    background-color: #fff;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.specialists{
+    display: flex;
+    overflow-x:scroll;
+    margin: 16px;
+    cursor: pointer;
+}
+
+.specialists::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    background-color: none;
+}
+
+.card{
+    &_container{
+        display: flex;
+        flex-direction: column;
+        min-width: 333px;
+        min-height: 216px;
+        background-color: #fff;
+        border: 1px solid #EDEFF2;
+        border-radius: 8px;
+        box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.04);
+        margin-right: 8px;
+        & .bold{
+            font-weight: 600;
+        }
+    }
+    &_title{
+        margin:auto;
+    }
+    &_body{
+        display: flex;
+        align-items: center;
+        margin: 16px;
+        justify-content: space-between;
+        & img{
+            margin-right: 10px;
+            background-color:lightblue;
+        }
+        & p{
+            text-align: center;
+            font-weight: 400;
+
+        }
+        & .bold{
+            font-weight: 600;
+        }
+    }
+}
+
+.date{
+    &_container{
+        margin-left: 16px;
+        margin-bottom: 20px;
+        height: 165px;
+        display: flex;
+        flex-direction: column;
+    }
+    &_items{
+        display: flex;
+        margin-top: 16px;
+        overflow-x: scroll;
+        overflow-y: none;
+
+        &::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+            background: none;
+        }
+        
+        & .active{
+            background: #F0FBFF;
+            color: #33BDE4;
+            border: 1px solid #33BDE4;
+        }
+        
+    }
+    &_title{
+        display: flex;
+        justify-content: space-between;
+        height: 24px;
+        margin-right: 18px;
+    }
+    &_item{
+        min-width: 86px;
+        min-height: 92px;
+        justify-content: center;
+        align-items: center;
+        background: #FFFFFF;
+        border: 1px solid #EDEFF2;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.04);
+        border-radius: 6px;
+        margin-right: 16px;
+        font-size: 16px;
+        & div{
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            padding-top: 50%;
+            align-items: center;
+        }
+    }
+
+}
+
+.time{
+    &_container{
+        margin-left: 16px;
+        height: 80px;
+    }
+    &_title{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &_items{
+        display: flex;
+        overflow-x: scroll;
+        min-height: 40px;
+        min-width: 359px;
+        &::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+        & .active{
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 40px;
+            color: #33BDE4;
+        }
+    }
+    &_item{
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        color: #C1C1C1;
+        margin-right: 16px;
+        background-color: #fff;
+    }
+}
+
+.form{
+    &_container{
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: space-between;
+        margin-left: 16px;
+        margin-right: 16px;
+        min-width: 343px;
+        min-height: 130px;
+        border: 1px solid #EDEFF2;
+        box-sizing: border-box;
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+        & .bold{
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+    }
+    &_title{
+        display: flex;
+        justify-content: space-between;
+        min-width: 343px;
+        min-height: 56px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        & p{
+            margin: auto;
+        }
+    }
+    &_date {
+        margin: auto;
+    }
+    &_time{
+        margin: auto;
+    }
+    &_submit{
+        width: 319px;
+        height: 36px;
+        margin: auto;
+        margin-bottom: 24px;
+        background: #33BDE4;
+        border-radius: 4px;
+    }
+    &_border{
+        width: 2px;
+        height: 56px;
+        background: #E6E6E6;
+        border-radius: 2px;
+    }
+}
